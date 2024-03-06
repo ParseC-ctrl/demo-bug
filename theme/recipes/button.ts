@@ -6,16 +6,28 @@ export default defineRecipe({
     display: "inline-flex",
     flexDir: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     cursor: "pointer",
-    p: "0.75rem 1.5rem",
-    minW: "11.875rem",
+    w: "full",
     borderRadius: "4rem",
+    minH: "3.625rem",
     textDecoration: "none",
+    fontWeight: "400",
     transition: "all .15s ease-in",
   },
   variants: {
+    size: {
+      sm: {
+        p: "0.625rem 1.25rem",
+      },
+      md: {
+        p: "0.75rem 1.5rem",
+      },
+    },
     variant: {
+      grey: {
+        bgColor: "#f7f5f4",
+      },
       light: {
         boxShadow: "inset 0 0 0 2px #fff",
         color: "#fff",
@@ -32,31 +44,10 @@ export default defineRecipe({
           color: "#1c1a1a",
         },
       },
-      purpleDark: {
-        backgroundColor: "#1c1a1a",
-        color: "#fff",
-        _hover: {
-          color: "#6f80d4",
-        },
-      },
-      purple: {
-        backgroundColor: "#6f80d4",
-        color: "#1c1a1a",
-        _hover: {
-          color: "#fff",
-        },
-      },
-      red: {
-        backgroundColor: "#ff6d66",
-        color: "#331a1f",
-        _hover: {
-          backgroundColor: "#331a1f",
-          color: "#ff6d66",
-        },
-      },
     },
   },
   defaultVariants: {
-    variant: "dark",
+    variant: "grey",
+    size: "sm",
   },
 });

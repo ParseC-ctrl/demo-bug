@@ -9,12 +9,13 @@ type Props = RecipeProps & Omit<ButtonElementProps, keyof RecipeProps>;
 export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ children, className, variant, ...props }, ref) => {
     const classes = button({ variant });
+    console.log(classes);
     return (
       <button ref={ref} className={`${classes} ${className ?? ""}`} {...props}>
         {children}
       </button>
     );
-  },
+  }
 );
 
 Button.displayName = "Button";
